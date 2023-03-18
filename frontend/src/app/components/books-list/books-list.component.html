@@ -16,14 +16,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let book of books.content"  [routerLink]="['/books', book.id]">
+            <tr *ngFor="let book of books.content; let i = index" [ngClass]="{'hover-effect': i !== -1}"  [routerLink]="['/books', book.id]">
               <td>{{book.title}}</td>
               <td>{{book.author}}</td>
               <td>{{book.genre}}</td>
               <td>{{book.year}}</td>
               <td>{{book.added}}</td>
               <td>{{book.checkOutCount}}</td>
-              <td>{{book.status}}</td>
+              <td [class.status]="true" [class.available]="isAvailable(book.status)">{{book.status}}</td>
             </tr>
           </tbody>
         </table>
