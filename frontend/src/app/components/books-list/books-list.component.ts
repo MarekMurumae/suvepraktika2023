@@ -18,10 +18,10 @@ export class BooksListComponent implements OnInit {
   ) {
   }
 
-  ngOnInit(): void {
+  ngOnInit(): Observable<Page<Book>> {
     // TODO this observable should emit books taking into consideration pagination, sorting and filtering options.
     this.books$ = this.bookService.getBooks({});
-
+    return this.books$;
   }
 
 }

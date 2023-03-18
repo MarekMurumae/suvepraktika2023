@@ -3,9 +3,30 @@
     <mat-card-title>Books</mat-card-title>
     <mat-card-content>
       <mat-nav-list *ngIf="(books$ | async) as books">
-        <a mat-list-item *ngFor="let book of books.content" [routerLink]="['/books', book.id]">
-          {{book.title}}
-        </a>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Genre</th>
+              <th>Year</th>
+              <th>Added</th>
+              <th>Checkout count</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book of books.content"  [routerLink]="['/books', book.id]">
+              <td>{{book.title}}</td>
+              <td>{{book.author}}</td>
+              <td>{{book.genre}}</td>
+              <td>{{book.year}}</td>
+              <td>{{book.added}}</td>
+              <td>{{book.checkOutCount}}</td>
+              <td>{{book.status}}</td>
+            </tr>
+          </tbody>
+        </table>
       </mat-nav-list>
     </mat-card-content>
   </mat-card>
