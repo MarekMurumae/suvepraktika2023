@@ -10,13 +10,15 @@ import { BookDetailComponent } from './components/book-detail/book-detail.compon
 import { HttpClientModule } from '@angular/common/http';
 import { CheckoutsComponent } from "./components/checkouts/checkouts.component";
 import {FormsModule} from "@angular/forms";
+import { CheckoutDetailComponent } from "./components/checkout-detail/checkout-detail.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     BooksListComponent,
     BookDetailComponent,
-    CheckoutsComponent
+    CheckoutsComponent,
+    CheckoutDetailComponent
   ],
   imports: [
     BrowserModule,

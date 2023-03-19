@@ -1,0 +1,20 @@
+.container {
+  max-width: 20%;
+  margin: 2em auto;
+}
+
+tr {
+  text-align: center;
+}
+
+td.status.available {
+  color: green;
+}
+
+/* set the text color to red for all other status values */
+td.status:not(.available) {
+  color: black;
+}
+
+
+

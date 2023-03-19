@@ -10,9 +10,9 @@ import { map, switchMap } from 'rxjs/operators';
   templateUrl: './book-detail.component.html',
   styleUrls: ['./book-detail.component.scss']
 })
+
 export class BookDetailComponent implements OnInit {
   book$!: Observable<Book>;
-
 
   constructor(
     private route: ActivatedRoute,
@@ -24,6 +24,10 @@ export class BookDetailComponent implements OnInit {
     this.book$ = this.route.params
       .pipe(map(params => params['id']))
       .pipe(switchMap(id => this.bookService.getBook(id)))
+  }
+
+  isAvailable(status: string): boolean {
+    return status === 'AVAILABLE';
   }
 
 }

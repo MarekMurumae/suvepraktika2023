@@ -21,7 +21,6 @@ export class CheckoutsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // TODO this observable should emit books taking into consideration pagination, sorting and filtering options.
     this.checkouts$ = this.CheckoutService.getCheckouts(this.pageNumber-1);
   }
 

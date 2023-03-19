@@ -1,0 +1,13 @@
+<div class="container mat-elevation-z4">
+  <mat-card>
+    <mat-card-content>
+      <mat-nav-list *ngIf="(checkout$ | async) as checkout">
+          <ul>Borrower: {{checkout.borrowerFirstName}} {{checkout.borrowerLastName}}</ul>
+          <ul>Title: {{checkout.borrowedBook.title}}</ul>
+          <ul>Author: {{checkout.borrowedBook.author}}</ul>
+          <ul>Checked out at: {{checkout.checkedOutDate}}</ul>
+          <ul>Due at: {{checkout.dueDate}}</ul>
+      </mat-nav-list>
+    </mat-card-content>
+  </mat-card>
+</div>
