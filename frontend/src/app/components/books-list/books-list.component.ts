@@ -21,10 +21,9 @@ export class BooksListComponent implements OnInit {
   isAvailable(status: string): boolean {
     return status === 'AVAILABLE';
   }
-  ngOnInit(): Observable<Page<Book>> {
+  ngOnInit(): void {
     // TODO this observable should emit books taking into consideration pagination, sorting and filtering options.
     this.books$ = this.bookService.getBooks({});
-    return this.books$;
   }
 
 }

@@ -2,7 +2,6 @@
   max-width: 1024px;
   margin: 2em auto;
 }
-
 tr {
   text-align: center;
 }
@@ -11,15 +10,3 @@ tr.hover-effect:hover {
   background-color: #f5f5f5;
   cursor: pointer;
 }
-
-td.status.available {
-  color: green;
-}
-
-/* set the text color to red for all other status values */
-td.status:not(.available) {
-  color: black;
-}
-
-
-
