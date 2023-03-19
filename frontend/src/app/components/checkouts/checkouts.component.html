@@ -1,6 +1,6 @@
 <div class="container mat-elevation-z4">
   <mat-card>
-    <mat-card-title>Books</mat-card-title>
+    <mat-card-title>Checkouts</mat-card-title>
     <mat-card-content>
       <mat-nav-list *ngIf="(checkouts$ | async) as checkouts">
         <table>
@@ -24,6 +24,8 @@
           </tbody>
         </table>
       </mat-nav-list>
+      <button (click)="previousPage()">previous</button>
+      <button (click)="nextPage()">next</button>
     </mat-card-content>
   </mat-card>
 </div>

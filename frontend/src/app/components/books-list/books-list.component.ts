@@ -19,13 +19,6 @@ export class BooksListComponent implements OnInit {
   ) {
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['pageNumber']) {
-      this.pageNumber = changes['pageNumber'].currentValue;
-      this.ngOnInit();
-    }
-  }
-
   isAvailable(status: string): boolean {
     return status === 'AVAILABLE';
   }

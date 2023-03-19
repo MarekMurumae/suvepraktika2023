@@ -12,6 +12,7 @@ import { CheckoutService } from "../../services/checkout.service";
 
 export class CheckoutsComponent implements OnInit {
 
+  public pageNumber = 1;
   checkouts$!: Observable<Page<Checkout>>;
 
   constructor(
@@ -21,6 +22,18 @@ export class CheckoutsComponent implements OnInit {
 
   ngOnInit(): void {
     // TODO this observable should emit books taking into consideration pagination, sorting and filtering options.
-    this.checkouts$ = this.CheckoutService.getCheckouts({});
+    this.checkouts$ = this.CheckoutService.getCheckouts(this.pageNumber-1);
+  }
+
+  previousPage(): void {
+    if (this.pageNumber>1){
+      this.pageNumber--;
+      this.ngOnInit();
+    }
+  }
+
+  nextPage(): void {
+    this.pageNumber++;
+    this.ngOnInit();
   }
 }
