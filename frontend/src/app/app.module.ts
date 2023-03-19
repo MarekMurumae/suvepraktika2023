@@ -9,6 +9,7 @@ import { BooksListComponent } from './components/books-list/books-list.component
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CheckoutsComponent } from "./components/checkouts/checkouts.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CheckoutsComponent } from "./components/checkouts/checkouts.component";
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

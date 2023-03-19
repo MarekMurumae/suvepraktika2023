@@ -18,10 +18,11 @@ export class BookService {
   ) {
   }
 
-  getBooks(filter: Partial<PageRequest>): Observable<Page<Book>> {
+  getBooks(page: number): Observable<Page<Book>> {
+    const filter = { pageIndex: page };
     const url = this.baseUrl + '/getBooks';
     const params = RestUtil.buildParamsFromPageRequest(filter);
-    return this.http.get<Page<Book>>(url, {params});
+    return this.http.get<Page<Book>>(url, { params });
   }
 
   getBook(bookId: string): Observable<Book> {
