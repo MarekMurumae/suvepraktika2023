@@ -3,6 +3,11 @@
   margin: 2em auto;
 }
 
+table {
+  table-layout: auto;
+  width: 100%;
+}
+
 tr {
   text-align: center;
 }
